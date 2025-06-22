@@ -28,7 +28,7 @@
                             {{ \Carbon\Carbon::create()->startOfWeek()->addDays($plan->day_of_week - 1)->translatedFormat('l') }}
                         </td>
                         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                            <a href="#" class="text-green-600 hover:text-green-900 mr-3">Kelola Exercises</a>
+                            <a href="{{ route('admin.workout-plans.exercises.index', $plan->id) }}" class="text-green-600 hover:text-green-900 mr-3">Kelola Exercises</a>
                             <a href="{{ route('admin.workout-plans.edit', $plan->id) }}" class="text-blue-600 hover:text-blue-900 mr-3">Edit</a>
                             <form action="{{ route('admin.workout-plans.destroy', $plan->id) }}" method="POST" class="inline" onsubmit="return confirm('Yakin ingin menghapus jadwal ini?');">
                                 @csrf
